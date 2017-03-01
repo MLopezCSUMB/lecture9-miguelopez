@@ -17,6 +17,9 @@ export class Content extends React.Component {
                 'numbers': data['numbers']
             });
         })
+        Socket.on('server generated name', (data) => {
+            console.log('Got a new name from server:', data);
+        });
     }
 
     render() {

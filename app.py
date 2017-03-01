@@ -15,6 +15,9 @@ def on_connect():
     print 'Someone connected!'
     name = random.randrange(100, 1000)
     print "someone's Name: " , name
+    socketio.emit('server generated name', {
+        'name': name
+    })
 
 @socketio.on('disconnect')
 def on_disconnect():

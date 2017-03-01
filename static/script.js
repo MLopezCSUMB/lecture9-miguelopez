@@ -13136,6 +13136,9 @@ var Content = exports.Content = function (_React$Component) {
                     'numbers': data['numbers']
                 });
             });
+            _Socket.Socket.on('server generated name', function (data) {
+                console.log('Got a new name from server:', data);
+            });
         }
     }, {
         key: 'render',
