@@ -1,6 +1,7 @@
 import os
 import flask
 import flask_socketio
+import random
 
 app = flask.Flask(__name__)
 socketio = flask_socketio.SocketIO(app)
@@ -12,6 +13,8 @@ def hello():
 @socketio.on('connect')
 def on_connect():
     print 'Someone connected!'
+    name = random.randrange(100, 1000)
+    print "someone's Name: " , name
 
 @socketio.on('disconnect')
 def on_disconnect():
