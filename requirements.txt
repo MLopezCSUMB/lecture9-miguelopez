@@ -1,2 +1,6 @@
 Flask
 flask-socketio
+psycopg2
+getevent
+getevent-websocket
+requests

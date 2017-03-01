@@ -13155,6 +13155,12 @@ var Content = exports.Content = function (_React$Component) {
                     { className: 'heading' },
                     'Random numbers so far!'
                 ),
+                React.createElement('div', {
+                    className: 'fb-login-button',
+                    'data-max-rows': '1',
+                    'data-size': 'medium',
+                    'data-show-faces': 'false',
+                    'data-auto-logout-link': 'true' }),
                 React.createElement(_Button.Button, null),
                 React.createElement(
                     'ul',
