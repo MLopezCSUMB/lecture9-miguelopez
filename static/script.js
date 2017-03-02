@@ -13172,7 +13172,7 @@ var Content = exports.Content = function (_React$Component) {
 
                     var item = React.createElement(
                         'li',
-                        null,
+                        { key: u },
                         u
                     );
                     all_users.push(item);

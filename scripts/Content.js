@@ -39,7 +39,7 @@ export class Content extends React.Component {
         );
         var all_users = [];
         for(var u of this.state['all users']){
-            var item = <li>{u}</li>;
+            var item = <li key={u}>{u}</li>;
             all_users.push(item);
         }
         return (
