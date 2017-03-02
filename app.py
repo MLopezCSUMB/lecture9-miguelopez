@@ -21,14 +21,16 @@ def on_connect():
         'name': name
     })
     all_connected_users[flask.request.sid] = name;
-    print "all connected users", all_connected_users
+    print "all connected users", all_connected_users;
     socketio.emit('list of all users', {
         'users': all_connected_users.values(),
     })
 
 @socketio.on('disconnect')
 def on_disconnect():
-    print 'Someone disconnected!'
+    print 'Someone disconnected!', flask.request.sid;
+    del all_connected_users[flask.request.sid];
+    print "All connected users", all_connected_users;
 
 all_mah_numbers = []
 
