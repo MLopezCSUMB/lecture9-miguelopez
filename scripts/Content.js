@@ -39,7 +39,8 @@ export class Content extends React.Component {
         );
         var all_users = [];
         for(var u of this.state['all users']){
-            console.log(u);
+            var item = <li>{u}</li>;
+            all_users.push(item);
         }
         return (
             <div>
@@ -52,6 +53,8 @@ export class Content extends React.Component {
                     data-auto-logout-link="true">  
                 </div>
                 <h2>My name: {this.state['my name']}</h2>
+                <h3>All users: </h3>
+                <ul>{all_users}</ul>
                 <Button />
                 <ul>{numbers}</ul>
                  

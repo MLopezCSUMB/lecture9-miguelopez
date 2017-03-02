@@ -13170,7 +13170,12 @@ var Content = exports.Content = function (_React$Component) {
                 for (var _iterator = this.state['all users'][Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
                     var u = _step.value;
 
-                    console.log(u);
+                    var item = React.createElement(
+                        'li',
+                        null,
+                        u
+                    );
+                    all_users.push(item);
                 }
             } catch (err) {
                 _didIteratorError = true;
@@ -13206,6 +13211,16 @@ var Content = exports.Content = function (_React$Component) {
                     null,
                     'My name: ',
                     this.state['my name']
+                ),
+                React.createElement(
+                    'h3',
+                    null,
+                    'All users: '
+                ),
+                React.createElement(
+                    'ul',
+                    null,
+                    all_users
                 ),
                 React.createElement(_Button.Button, null),
                 React.createElement(
