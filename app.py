@@ -22,6 +22,9 @@ def on_connect():
     })
     all_connected_users.append(name)
     print "all connected users", all_connected_users
+    socketio.emit('list of all users', {
+        'users': all_connected_users,
+    })
 
 @socketio.on('disconnect')
 def on_disconnect():
