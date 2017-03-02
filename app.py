@@ -6,6 +6,8 @@ import random
 app = flask.Flask(__name__)
 socketio = flask_socketio.SocketIO(app)
 
+all_connected_users = [];
+
 @app.route('/')
 def hello():
     return flask.render_template('index.html')
@@ -18,6 +20,8 @@ def on_connect():
     socketio.emit('server generated name', {
         'name': name
     })
+    all_connected_users.append(name)
+    print "all connected users", all_connected_users
 
 @socketio.on('disconnect')
 def on_disconnect():
