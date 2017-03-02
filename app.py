@@ -30,6 +30,9 @@ def on_connect():
 def on_disconnect():
     print 'Someone disconnected!', flask.request.sid;
     del all_connected_users[flask.request.sid];
+    socketio.emit('list of all users', {
+        'users': all_connected_users.values(),
+    })
     print "All connected users", all_connected_users;
 
 all_mah_numbers = []
