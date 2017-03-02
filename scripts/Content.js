@@ -8,7 +8,8 @@ export class Content extends React.Component {
         super(props);
         this.state = {
             'numbers': [],
-            'my name': 'I don\'t have a name yet'
+            'my name': 'I don\'t have a name yet',
+            'all users': []
         };
     }
 
@@ -26,6 +27,9 @@ export class Content extends React.Component {
         });
         Socket.on('list of all users', (data) => {
             console.log('list of all users', data);
+            this.setState({
+                'all users': data['users']
+            })
         })
     }
 

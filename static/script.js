@@ -13122,7 +13122,8 @@ var Content = exports.Content = function (_React$Component) {
 
         _this.state = {
             'numbers': [],
-            'my name': 'I don\'t have a name yet'
+            'my name': 'I don\'t have a name yet',
+            'all users': []
         };
         return _this;
     }
@@ -13145,6 +13146,9 @@ var Content = exports.Content = function (_React$Component) {
             });
             _Socket.Socket.on('list of all users', function (data) {
                 console.log('list of all users', data);
+                _this2.setState({
+                    'all users': data['users']
+                });
             });
         }
     }, {
