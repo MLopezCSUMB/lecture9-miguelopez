@@ -13168,6 +13168,12 @@ var Content = exports.Content = function (_React$Component) {
                     'data-size': 'medium',
                     'data-show-faces': 'false',
                     'data-auto-logout-link': 'true' }),
+                React.createElement(
+                    'h2',
+                    null,
+                    'My name: ',
+                    this.state['my name']
+                ),
                 React.createElement(_Button.Button, null),
                 React.createElement(
                     'ul',

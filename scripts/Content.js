@@ -40,6 +40,7 @@ export class Content extends React.Component {
                     data-show-faces="false" 
                     data-auto-logout-link="true">  
                 </div>
+                <h2>My name: {this.state['my name']}</h2>
                 <Button />
                 <ul>{numbers}</ul>
                  
