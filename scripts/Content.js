@@ -24,6 +24,9 @@ export class Content extends React.Component {
                 'my name': data['name'],
             })
         });
+        Socket.on('list of all users', (data) => {
+            console.log('list of all users', data);
+        })
     }
 
     render() {

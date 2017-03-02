@@ -13143,6 +13143,9 @@ var Content = exports.Content = function (_React$Component) {
                     'my name': data['name']
                 });
             });
+            _Socket.Socket.on('list of all users', function (data) {
+                console.log('list of all users', data);
+            });
         }
     }, {
         key: 'render',
