@@ -37,6 +37,10 @@ export class Content extends React.Component {
         let numbers = this.state.numbers.map(
             (n, index) => <li className="number-item" key={index}>{n}</li>
         );
+        var all_users = [];
+        for(var u of this.state['all users']){
+            console.log(u);
+        }
         return (
             <div>
                 <h1 className="heading">Random numbers so far!</h1>
