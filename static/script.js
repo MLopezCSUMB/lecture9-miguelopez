@@ -13121,7 +13121,8 @@ var Content = exports.Content = function (_React$Component) {
         var _this = _possibleConstructorReturn(this, (Content.__proto__ || Object.getPrototypeOf(Content)).call(this, props));
 
         _this.state = {
-            'numbers': []
+            'numbers': [],
+            'my name': 'I don\'t have a name yet'
         };
         return _this;
     }
@@ -13137,7 +13138,10 @@ var Content = exports.Content = function (_React$Component) {
                 });
             });
             _Socket.Socket.on('server generated name', function (data) {
-                console.log('Got a new name from server:', data);
+                console.log('Got a new name from server: ', data);
+                _this2.setState({
+                    'my name': data['name']
+                });
             });
         }
     }, {

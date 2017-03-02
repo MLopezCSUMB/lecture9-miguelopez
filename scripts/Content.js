@@ -7,7 +7,8 @@ export class Content extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            'numbers': []
+            'numbers': [],
+            'my name': 'I don\'t have a name yet'
         };
     }
 
@@ -18,7 +19,10 @@ export class Content extends React.Component {
             });
         })
         Socket.on('server generated name', (data) => {
-            console.log('Got a new name from server:', data);
+            console.log('Got a new name from server: ', data);
+            this.setState({
+                'my name': data['name'],
+            })
         });
     }
 
