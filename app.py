@@ -6,7 +6,7 @@ import random
 app = flask.Flask(__name__)
 socketio = flask_socketio.SocketIO(app)
 
-all_connected_users = [];
+all_connected_users = {};
 
 @app.route('/')
 def hello():
@@ -14,16 +14,16 @@ def hello():
 
 @socketio.on('connect')
 def on_connect():
-    print 'Someone connected!'
+    print 'Someone connected: ', flask.request.sid;
     name = random.randrange(100, 1000)
     print "someone's Name: " , name
-    socketio.emit('server generated name', {
+    flask_socketio.emit('server generated name', {
         'name': name
     })
-    all_connected_users.append(name)
+    all_connected_users[flask.request.sid] = name;
     print "all connected users", all_connected_users
     socketio.emit('list of all users', {
-        'users': all_connected_users,
+        'users': all_connected_users.values(),
     })
 
 @socketio.on('disconnect')
